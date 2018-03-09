@@ -11,6 +11,8 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 
+import org.lovebing.reactnative.baidumap.BaiduMapPackage; //添加
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -22,7 +24,8 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-          new MainReactPackage()
+          new MainReactPackage(),                      //注意这个地方的逗号
+          new BaiduMapPackage(getApplicationContext()) // 添加
       );
     }
 
